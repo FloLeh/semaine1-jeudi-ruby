@@ -50,4 +50,14 @@ end
 puts "\nVoici la liste des cryptomonnaies dont le cours est inférieur à 6000 :"
 puts liste_inf
 
+=beginif r != "?" #on exclue encore le "?" 
+
+  if cours < 6000                   #On parcourt nos values en concatenant dans la listes
+    liste_inf << my_hash.key(cours) #celles dont le montant est inférieur à 6000
+    if cours>current
+      current=cours                 #C'est ici que le maximum s'actualise
+    end
+  end
+=end
+
 puts "\nLa plus élevée : #{my_hash.key(current)} avec $#{current}"
